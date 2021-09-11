@@ -1,0 +1,22 @@
+body {
+    background-color:pink;
+}
+h1 { 
+    color:red;
+    font-family: sans-serif;
+    border-bottom: 1px solid blue;
+}
+blockquote { 
+    background-color: lightgray;
+    padding: 1rem;
+}
+h2 {
+    color:purple;
+}
+p {
+    margin-left:100px;
+}
+img.side {
+    float:right;
+    margin: 12px;
+}
