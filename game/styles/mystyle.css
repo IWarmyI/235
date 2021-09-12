@@ -2,11 +2,11 @@ body {
     background-color:#ffffff;
 }
 h1 { 
-    color:red;
-    border-bottom: 1px solid blue;
+    color:#ff0000;
+    border-bottom: 1px solid #0000ff;
 }
 blockquote { 
-    background-color: lightgray;
+    background-color: #d3d3d3;
     padding: 1rem;
 }
 h2 {
@@ -29,7 +29,7 @@ footer {
     background-color: #bde0fe;
 }
 a:link {
-    color: #a2d2ff;
+    color: #483d8b;
 }
 a:visited {
     color: #cdb4db;
@@ -41,5 +41,5 @@ a:hover {
     background-color:#98fb98;
 }
 a:active {
-    color: #ff0000;
+    color: #800000;
 }
