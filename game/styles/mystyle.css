@@ -1,5 +1,5 @@
 body {
-    background-color:#ffffff;
+    background-color:#150050;
 }
 h1 { 
     color:#ff0000;
@@ -42,4 +42,22 @@ a:hover {
 }
 a:active {
     color: #800000;
+}
+main, header, footer {
+    border: solid 1px #000000;
+    margin: 0 auto;
+    width: 80%;
+    padding: 2rem;
+}
+header {
+    border-bottom: none;
+    background-color: #ffffff;
+}
+footer {
+    border-top: none;
+}
+main {
+    border-top: none;
+    border-bottom: none;
+    background-color: #ffffff;
 }
