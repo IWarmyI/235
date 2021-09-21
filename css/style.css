@@ -1,0 +1,50 @@
+body {
+    background-color: #3d405b;
+}
+p {
+    color: #81b29a;
+    text-align: center;
+    margin: 2rem;
+}
+a, li, p, em {
+    font-family: Arial, sans-serif;
+}
+hr {
+    clear: right;
+    border: solid 1px #2c6078;
+}
+a:link {
+    color: #81b29a;
+}
+a:visited {
+    color: #e07a5f;
+}
+a:focus {
+    background-color: #f2cc8f;
+}
+a:hover {
+    background-color: #f4f1de;
+}
+a:active {
+    color: #3d405b;
+}
+#game {
+    float: left;
+    margin: 1rem;
+}
+#real {
+    float: right;
+    margin: 1rem;
+}
+.header {
+    margin: 2rem;
+    color: #f2cc8f;
+    margin: 2rem auto;
+    text-align: center;
+    font-family: "Gowun Dodum", sans-serif;
+}
+.links p{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
