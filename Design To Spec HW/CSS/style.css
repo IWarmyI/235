@@ -1,0 +1,186 @@
+/*fonts*/
+@font-face {
+    font-family: 'dogica_pixelregular';
+    src: url('../Fonts/Dogica/dogicapixel-webfont.woff2') format('woff2'),
+         url('../Fonts/Dogica/dogicapixel-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'retro_computerregular';
+    src: url('../Fonts/RetroComputer/retro_computer_personal_use-webfont.woff2') format('woff2'),
+         url('../Fonts/RetroComputer/retro_computer_personal_use-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*body css*/
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #35363d;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+/*text css*/
+h2{
+    font-family: 'retro_computerregular', sans-serif;
+    color: #ffffff;
+    font-weight: normal;
+}
+div {
+    font-family: 'retro_computerregular', sans-serif;
+    color: #ffffff;
+}
+p {
+    font-family: 'dogica_pixelregular', sans-serif;
+    font-weight: normal;
+    color: #ffffff;
+}
+/*header css*/
+header {
+    background-color: #686868;
+}
+.header {
+    display: flex;
+    clear: both;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    font-size: 30px;
+    margin: 0 7vw;
+}
+.name {
+    font-size: 15px;
+    margin-left: auto;
+    text-align: right;
+}
+/*oak tree css*/
+.oaktree {
+    display:flex;
+    flex-direction: row-reverse;
+    clear: both;
+    align-items: center;
+    justify-content: center;
+    margin: 3vw 7vw;
+}
+#treeimg {
+    display: flex;
+    flex-direction: row-reverse;
+}
+#treeimg img {
+    padding: 2rem;
+    background-image: linear-gradient(to top left, #244d3e -5em, #e8fdf5 100em);
+    border: 6px solid #ffffff;
+    margin-left: 1rem;
+    width: 40vw;
+}
+#tree {
+    box-sizing: border-box;
+    background-color: #686868;
+    padding: 2rem;
+    width: 40vw;
+    line-height: 20px;
+}
+#treetype {
+    font-size: 30px;
+}
+/*valley img css*/
+#valley {
+    width: 100%;
+    grid-area: valley;
+}
+/*crafting css*/
+.crafting {
+    display: grid;
+    grid-template-areas:
+    "plank stick"
+    "chest stair";
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.plank {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    justify-content: flex-end;
+    margin: 1rem 1.5rem -1rem;
+}
+
+.stick {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    justify-content: flex-start;
+    margin: 1rem 5rem -1rem;
+}
+.chest {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    justify-content: flex-end;
+    margin: 1rem 1.5rem 2rem;
+}
+.stair {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    justify-content: flex-start;
+    margin: 1rem 5rem 2rem;
+}
+.icon {
+    display: flex;
+}
+.icon img {
+    width: 12.5vw;
+    height: 12.5vw;
+    background-color: #324e44;
+    border: 6px solid #ffffff;
+    padding: 5rem 3rem 3rem;
+    margin-right: 1rem;
+}
+.icon h2 {
+    display: inline;
+    margin-right: -14.5rem;
+    margin-top: 2rem;
+    z-index: 3;
+}
+.info {
+    background-color: #686868;
+    padding: 0 1rem;
+    width: 18vw;
+    height: 20vw;
+    margin-right: 2rem;
+    line-height: 25px;
+}
+/*footer css*/
+hr {
+    background-color: #ffffff;
+    height: 8px;
+    margin: 0;
+    width: 100%;
+}
+footer {
+    background-image: url('../Assets/trees.png');
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    margin-top: 0;
+    display: flex;
+    clear: both;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+}
+#question {
+    font-size: 30px;
+    margin: 2rem 7vw;
+}
+#copyright {
+    font-size: 30px;
+    margin: 3rem 7vw;
+    text-align: right;
+}
