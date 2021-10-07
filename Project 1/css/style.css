@@ -1,0 +1,71 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #3d405b;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+a {
+    text-decoration: none;
+    margin: auto 1rem;
+}
+div {
+    font-family: 'Gowun Dodum', sans-serif;
+    color: #ffffff;
+}
+header, footer {
+    padding: 1rem;
+    background-color: #303348;
+}
+a:link {
+    color: #ffffff;
+}
+a:visited {
+    color: #696969;
+}
+a:focus {
+    background-color: #2e4045;
+}
+a:hover {
+    background-color: #2e4045;
+}
+a:active {
+    color: #f4f1de;
+}
+.header, .footer, .me, .project {
+    display: flex;
+    clear: both;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    font-size: 30px;
+    margin: 3rem auto;
+}
+main {
+    margin: 2rem;
+}
+figure { 
+    display: inline-block;
+    text-align: center;
+}
+figcaption {
+    font-size: 40px;
+    font-weight: bold;
+}
+.footer {    
+    flex-direction: row-reverse;
+}
+.me, .project, .project2 {
+    font-size: 20px;
+}
+.project img {
+    margin-right: 3rem;
+}
+.reverse {
+    flex-direction: row-reverse;
+}
+.reverse img {
+
+    margin-left: 3rem;
+}
