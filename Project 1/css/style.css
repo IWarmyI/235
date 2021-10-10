@@ -58,7 +58,7 @@ figure {
 }
 figcaption {
     font-size: 40px;
-    font-weight: bold;
+    font-weight: bolder;
 }
 /*specific section formatting css*/
 .footer {    
@@ -82,4 +82,8 @@ figcaption {
     justify-content: center;
     margin: 1rem;
     text-align: center;
+}
+h2 {
+    font-weight: lighter;
+    text-decoration: underline;
 }
