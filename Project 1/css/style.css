@@ -7,88 +7,6 @@ body, html {
     height: 100%;
     width: 100%;
 }
-/*mobile layout*/
-#wrapper {
-    display: grid;
-    grid-template-areas:
-    "header"
-    "aboutimg"
-    "aboutinfo"
-    "p1info"
-    "p1img"
-    "p2info"
-    "p2img"
-    "p3info"
-    "p3img"
-    "project1"
-    "project2"
-    "project3"
-    "footer";
-}
-/*desktop layout*/
-@media screen and (min-width:850px) {
-    #wrapper {
-        grid-template-areas:
-        "header header header"
-        "about about about"
-        "p1 p1 p1"
-        "p2 p2 p2"
-        "p3 p3 p3"
-        "project1 project2 project3"
-        "footer footer footer";
-    }
-}
-#navbar {
-    grid-area: header;
-}
-.me {
-    grid-area: about;
-}
-#about {
-    grid-area: aboutimg;
-}
-.me div {
-    grid-area: aboutinfo;
-}
-.p1 {
-    grid-area: p1
-}
-.p1 div {
-    grid-area: p1info;
-}
-.p1 img {
-    grid-area: p1img;
-}
-.p2 {
-    grid-area: p2
-}
-.p2 div {
-    grid-area: p2info;
-}
-.p2 img {
-    grid-area: p2img;
-}
-.p3 {
-    grid-area: p3
-}
-.p3 div {
-    grid-area: p3info;
-}
-.p3 img {
-    grid-area: p3img;
-}
-#game1 {
-    grid-area: project1;
-}
-#game2 {
-    grid-area: project2;
-}
-#game3 {
-    grid-area: project3;
-}
-#contact {
-    grid-area: footer;
-}
 /*font setup*/
 div {
     font-family: 'Scheherazade New', sans-serif;
@@ -165,16 +83,16 @@ figure img {
 .me, .project, .more {
     font-size: 20px;
 }
-.project {
-    justify-content: space-around;
+.p1, .p2, .p3 {
+    justify-content: space-between;
 }
-.project img {
+.p1 img, .p3 img {
     margin-right: 3rem;
 }
-.reverse {
+.p2 {
     flex-direction: row-reverse;
 }
-.reverse img {
+.p2 img {
     margin-left: 3rem;
 }
 #game1, #game2, #game3{
@@ -187,4 +105,26 @@ figure img {
 h2 {
     font-weight: lighter;
     text-decoration: underline;
+}
+/*mobile layout*/
+@media screen and (max-width:850px) {
+    .header {
+        flex-direction: column;
+    }
+    .nav {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .p1, .p2, .p3 {
+        flex-flow: column wrap;
+    }
+    .p1 img, .p2 img, .p3 img {
+        margin: 0;
+    }
+    .more {
+        flex-flow: column wrap;
+    }
+    .footer {
+        flex-direction: column;
+    }
 }
