@@ -7,16 +7,102 @@ body, html {
     height: 100%;
     width: 100%;
 }
+/*mobile layout*/
+#wrapper {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "aboutimg"
+    "aboutinfo"
+    "p1info"
+    "p1img"
+    "p2info"
+    "p2img"
+    "p3info"
+    "p3img"
+    "project1"
+    "project2"
+    "project3"
+    "footer";
+}
+/*desktop layout*/
+@media screen and (min-width:850px) {
+    #wrapper {
+        grid-template-areas:
+        "header header header"
+        "about about about"
+        "p1 p1 p1"
+        "p2 p2 p2"
+        "p3 p3 p3"
+        "project1 project2 project3"
+        "footer footer footer";
+    }
+}
+#navbar {
+    grid-area: header;
+}
+.me {
+    grid-area: about;
+}
+#about {
+    grid-area: aboutimg;
+}
+.me div {
+    grid-area: aboutinfo;
+}
+.p1 {
+    grid-area: p1
+}
+.p1 div {
+    grid-area: p1info;
+}
+.p1 img {
+    grid-area: p1img;
+}
+.p2 {
+    grid-area: p2
+}
+.p2 div {
+    grid-area: p2info;
+}
+.p2 img {
+    grid-area: p2img;
+}
+.p3 {
+    grid-area: p3
+}
+.p3 div {
+    grid-area: p3info;
+}
+.p3 img {
+    grid-area: p3img;
+}
+#game1 {
+    grid-area: project1;
+}
+#game2 {
+    grid-area: project2;
+}
+#game3 {
+    grid-area: project3;
+}
+#contact {
+    grid-area: footer;
+}
 /*font setup*/
 div {
-    font-family: 'Gowun Dodum', sans-serif;
+    font-family: 'Scheherazade New', sans-serif;
+    color: #ffffff;
+}
+h2 {
+    font-family: 'Gowun Dodum', serif;
     color: #ffffff;
 }
 /*header/footer bg css*/
 header, footer {
     padding: 1rem;
     background-color: #303348;
-    font-size: 30px;
+    font-size: 40px;
 }
 /*link css*/
 a {
@@ -27,7 +113,7 @@ a:link {
     color: #ffffff;
 }
 a:visited {
-    color: #696969;
+    color: #000000;
 }
 a:focus {
     background-color: #2e4045;
@@ -39,7 +125,7 @@ a:active {
     color: #f4f1de;
 }
 /*section flexboxes*/
-.header, .footer, .me, .project, .more {
+.header, .footer, .project, .more {
     display: flex;
     clear: both;
     align-items: center;
@@ -52,13 +138,25 @@ main {
     margin: 2rem;
 }
 /*img and tagline css*/
+.me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 figure { 
     display: inline-block;
     text-align: center;
 }
 figcaption {
-    font-size: 40px;
-    font-weight: bolder;
+    font-size: 30px;
+    line-height: 30px;
+}
+figure img {
+    height: 200px;
+    width: 200px;
+}
+.me div{
+    max-width: 1000px;
 }
 /*specific section formatting css*/
 .footer {    
@@ -66,6 +164,9 @@ figcaption {
 }
 .me, .project, .more {
     font-size: 20px;
+}
+.project {
+    justify-content: space-around;
 }
 .project img {
     margin-right: 3rem;
