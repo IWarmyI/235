@@ -111,6 +111,9 @@ u {
 }
 /*mobile layout*/
 @media screen and (max-width:850px) {
+    header, footer {
+        font-size: 30px;
+    }
     .header {
         flex-direction: column;
     }
@@ -118,11 +121,18 @@ u {
         display: flex;
         flex-flow: column nowrap;
     }
+    .me {
+        flex-flow: column wrap;
+    }
     .p1, .p2, .p3 {
         flex-flow: column wrap;
     }
     .p1 img, .p2 img, .p3 img {
         margin: 0;
+        width: 80%;
+    }
+    .project {
+        align-items: center;
     }
     .more {
         flex-flow: column wrap;
