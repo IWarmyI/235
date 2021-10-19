@@ -1,0 +1,57 @@
+/*page setup*/
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #3d405b;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+/*font css*/
+div, p, h2, button {
+    font-family: 'Scheherazade New', serif;
+    font-size: 30px;
+    color: #ffffff;
+}
+/*header/footer css*/
+#title, #name {
+    text-decoration: underline;
+    text-align: center;
+}
+/*main css*/
+main {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../assets/flowers.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 2rem auto;
+    height: 100%;
+    width: 80%;
+}
+/*quote text css*/
+#quote {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+/*button css*/
+#button {
+    background-color: #000000;
+    border: 2px solid #81b29a;
+    padding: 0.5rem 1rem;
+    font-size: 25px;
+    border-radius: 50%;
+    transition-duration: 0.4s;
+    margin-bottom: 2rem;
+}
+#button:hover {
+    background-color: #81b29a;
+}
+#button:active {
+    background-color: #ffffff;
+}

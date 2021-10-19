@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--my css-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Phrases</title>
+</head>
+<body>
+    <header>
+        <div id="title">
+            Random Phrases
+        </div>
+    </header>
+
+    <main>
+        <div>
+            <h2>
+                Random Quotes I Looked Up
+            </h2>
+            <p id="quote">
+                *Random Quote Here*
+            </p>
+        </div>
+        <div>
+            <button onclick="displayQuote()" id="button">Get a New Quote</button>
+        </div>
+    </main>
+
+    <footer>
+        <div id="name">
+            Made by Darvin Muralitharan
+        </div>
+    </footer>
+
+    <script>
+        let quotes = [
+            '\"It\'s not whether you get knocked down, it\'s whether you get back up.\" –Vince Lombardi',
+            '\"If you don\'t like the road you\'re walking, start paving another one.\" – Dolly Parton',
+            '\"There is no substitute for hard work.\"  – Thomas Edison',
+            '\"It hurt because it mattered.\" – John Green',
+            '\"The happiness of your life depends on the quality of your thoughts.\" – Marcus Aurelius'
+        ];
+
+        function displayQuote()
+        {
+            let num = Math.floor(Math.random() * quotes.length);
+            document.querySelector("#quote").innerHTML = quotes[num];
+        }
+        
+        window.onload = displayQuote;
+    </script>
+</body>
+</html>
