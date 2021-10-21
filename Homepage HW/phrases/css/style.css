@@ -1,11 +1,11 @@
 /*page setup*/
 body, html {
-    margin: 1rem;
+    margin: 0;
     padding: 0;
     background-color: #3d405b;
+    overflow-x: hidden;
     height: 100%;
     width: 100%;
-    overflow: hidden;
 }
 /*font css*/
 div, p, h2, button {
@@ -18,10 +18,6 @@ div, p, h2, button {
     text-decoration: underline;
     text-align: center;
     font-size: 40px;
-    color: #f2cc8f;
-}
-#name {
-    margin-top: 3rem;
 }
 /*main css*/
 main {
@@ -30,10 +26,10 @@ main {
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../assets/flowers.png');
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
-    margin: -10rem auto;
+    margin: 2rem auto;
     width: 80%;
     height: 100%;
 }
@@ -43,7 +39,6 @@ main {
 }
 h2 {
     text-align: center;
-    color: #f2cc8f;
 }
 /*button css*/
 #button {
@@ -54,7 +49,6 @@ h2 {
     border-radius: 50%;
     transition-duration: 0.4s;
     margin-bottom: 2rem;
-    font-weight: bold;
 }
 #button:hover {
     background-color: #81b29a;

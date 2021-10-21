@@ -31,7 +31,7 @@
             </p>
         </div>
         <div>
-            <button id="button">Get a New Quote</button>
+            <button onclick="displayQuote()" id="button">Get a New Quote</button>
         </div>
     </main>
 
@@ -50,14 +50,13 @@
             '\"The happiness of your life depends on the quality of your thoughts.\"<br> – Marcus Aurelius'
         ];
 
-        let displayQuote = _ => {
+        function displayQuote()
+        {
             let num = Math.floor(Math.random() * quotes.length);
             document.querySelector("#quote").innerHTML = quotes[num];
         }
-
+        
         window.onload = displayQuote;
-
-        document.querySelector("#button").addEventListener("click", displayQuote);
     </script>
 </body>
 </html>

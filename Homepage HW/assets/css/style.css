@@ -37,14 +37,14 @@ a:active {
     margin: 1rem;
 }
 .header {
-    margin: 2rem;
     color: #f2cc8f;
     margin: 2rem auto;
     text-align: center;
     font-family: "Gowun Dodum", sans-serif;
 }
-.links p{
+#links {
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row nowrap;
     justify-content: center;
+    margin-top: -2rem;
 }
