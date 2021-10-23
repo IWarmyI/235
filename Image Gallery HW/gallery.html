@@ -84,21 +84,26 @@
 
 		let imgSelect = e => {
 			let image = e.target.dataset.image;
+			let desc = document.querySelector("#description");
 			if (image == "cassie.jpg")
 			{
 				document.querySelector("img").src="images/cassie.jpg";
+				desc.innerHTML = "It's a dog! Choose a new image.";
 			}
 			if (image == "seal.jpg")
 			{
 				document.querySelector("img").src="images/seal.jpg";
+				desc.innerHTML = "It's a seal! Choose a new image.";
 			}
 			if (image == "wolf.jpg")
 			{
 				document.querySelector("img").src="images/wolf.jpg";
+				desc.innerHTML = "It's a wolf! Choose a new image.";
 			}
 			if (image == "eagle.jpg")
 			{
 				document.querySelector("img").src="images/eagle.jpg";
+				desc.innerHTML = "It's an eagle! Choose a new image.";
 			}
 		};
 
