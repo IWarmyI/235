@@ -8,20 +8,36 @@
 </head>
 <body>
     <header>
-        <h1>Amiibo Finder</h1>
+        <b>Amiibo Finder</b>
     </header>
 
-    <p>Search Term -&gt; <input id="searchterm" type="text" size="20" maxlength="20" autofocus value="mario" /></p>
+    <div id="fields">
+        <p>Character: <input id="character" type="text" size="20" maxlength="40" autofocus value="mario" /></p>
 
-    <p><button type="button" id="search" class="green">Search!</button></p>
+        <p>Game Series: <input id="game" type="text" size="20" maxlength="40" autofocus value="super mario" /></p>
 
-    <p id="debug"></p>
+        <p>Amiibo Series: <input id="amiibo" type="text" size="20" maxlength="40" autofocus value="super mario bros." /></p>
+    </div>
 
-    <hr>
+    <!-- <div id="count">
+        Max Number of Results:
+        <select id="limit">
+            <option value="5" selected>5</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div> -->
+
+    <div id="button">
+        <button type="button" id="search" class="green">Search!</button>
+    </div>
+
+    <!-- <p id="debug"></p> -->
     
-    <h2>Results</h2>
     <div id="content">
-        <p>No data yet!</p>
+        <!--script adds content-->
     </div>
 </body>
 </html>

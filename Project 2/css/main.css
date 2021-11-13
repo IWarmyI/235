@@ -1,0 +1,68 @@
+/*page setup*/
+body, html {
+    padding: 0;
+    background-color: #3d405b;
+    height: 100%;
+    width: 95%;
+    margin: 1rem auto;
+}
+header, #fields {
+    color: #f2cc8f;
+}
+header {
+    text-align: center;
+    font-size: 60px;
+    margin: 0;
+}
+/*user control css*/
+#fields {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+/*button css*/
+#search {
+    background-color: #81b29a;
+    border: 2px solid #81b29a;
+    padding: 0.5rem 1rem;
+    font-size: 30px;
+    border-radius: 50%;
+    transition-duration: 0.4s;
+    font-weight: bold;
+    color: #f2cc8f;
+}
+#search:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
+}
+#search:active {
+    background-color: #ffffff;
+}
+#button {
+    text-align: center;
+}
+/*api output css*/
+#content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    margin: 1rem auto;
+}
+#content img {
+    height: 60%;
+    width: 40%;
+}
+#content div {
+    border: 1px solid #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#content u, #content p {
+    color: #e07a5f;
+}
+#content u {
+    font-size: 30px;
+    text-align: center;
+}
+#content p {
+    font-size: 20px;
+}
