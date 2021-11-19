@@ -1,14 +1,18 @@
 "use strict";
 window.onload = init;
 
+//main entry point to web service
+const SERVICE_URL = "https://www.amiiboapi.com/api/";
+
 function init(){
+    gameStart();
+    amiiboStart();
     document.querySelector("#search").onclick = getData;
 
     //get input fields
     const character = document.querySelector("#character");
     const game = document.querySelector("#game");
     const amiibo = document.querySelector("#amiibo");
-    //const limit = document.querySelector("#limit");
 
     //set prefix
     const prefix = "dm1250-";
@@ -17,13 +21,11 @@ function init(){
     const characterKey = prefix + "character";
     const gameKey = prefix + "game";
     const amiiboKey = prefix + "amiibo";
-    //const limitKey = prefix + "limit";
 
     //get data
     const storedCharacter = localStorage.getItem(characterKey);
     const storedGame = localStorage.getItem(gameKey);
     const storedAmiibo = localStorage.getItem(amiiboKey);
-    //const storedLimit = localStorage.getItem(limitKey);
 
     //display if found
     if (storedCharacter)
@@ -38,29 +40,21 @@ function init(){
     {
         amiibo.value = storedAmiibo;
     }
-    /*if (storedLimit)
-    {
-        limit.querySelector(`option[value='${storedLimit}']`).selected = true;
-    }*/
 
     //set new key-value pairs if user changes text/radio button
     character.onchange = e => { localStorage.setItem(characterKey, e.target.value) };
     game.onchange = e => { localStorage.setItem(gameKey, e.target.value) };
     amiibo.onchange = e => { localStorage.setItem(amiiboKey, e.target.value) };
-    //limit.onchange = e => { localStorage.setItem(limitKey, e.target.value) };
 }
 
 function getData(){
-    // 1 - main entry point to web service
-    const SERVICE_URL = "https://www.amiiboapi.com/api/amiibo/?";
-    
     // No API Key required!
     
-    // 2 - build up our URL string
-    // not necessary for this service endpoint
-    let url = SERVICE_URL;
+    //build up our URL string
+    //not necessary for this service endpoint
+    let url = SERVICE_URL + "amiibo/?";
     
-    // 3 - parse the user entered terms we wish to search
+    //parse the user entered terms we wish to search
 
     //chracter name
     let character = document.querySelector("#character").value.trim();
@@ -95,20 +89,17 @@ function getData(){
     {
         url += `&amiiboSeries=${amiibo}`;
     }
-    
-    // 4 - update the UI (delete when finished)
-    //document.querySelector("#debug").innerHTML = `<b>Querying web service with:</b> <a href="${url}" target="_blank">${url}</a>`;
-    
-    // 5 - create a new XHR object
+
+    //create a new XHR object
     let xhr = new XMLHttpRequest();
 
-    // 6 - set the onload handler
+    //set the onload handler
     xhr.onload = dataLoaded;
 
-    // 7 - set the onerror handler
+    //set the onerror handler
     xhr.onerror = dataError;
 
-    // 8 - open connection and send the request
+    //open connection and send the request
     xhr.open("GET",url);
     xhr.send();
 }
@@ -118,21 +109,15 @@ function dataError(e){
 }
 
 function dataLoaded(e){
-    // 1 - e.target is the xhr object
+    //e.target is the xhr object
     let xhr = e.target;
 
-    // 2 - xhr.responseText is the JSON file we just downloaded
-    console.log(xhr.responseText);
-
-    // 3 - turn the text into a parsable JavaScript object
+    //turn the text into a parsable JavaScript object
     let obj = JSON.parse(xhr.responseText);
     
-    // 4 - if there is an array of results, loop through them
+    //if there is an array of results, loop through them
     let results = obj.amiibo;
     let bigString = "";
-
-    //get amount of results requested by user
-    //let length = document.querySelector("#limit").value
 
     //check length of results
     if (results == null)
@@ -162,6 +147,96 @@ function dataLoaded(e){
         }
     }
 
-    // 5 - display final results to user
+    //display final results to user
     document.querySelector("#content").innerHTML = bigString;
+}
+
+function gameStart()
+{
+    //create a new XHR object
+    let xhr = new XMLHttpRequest();
+
+    //url to get all amiibo game series
+    let setup = SERVICE_URL + "gameseries";
+
+    //set the onload handler
+    xhr.onload = setGameOptions;
+
+    //set the onerror handler
+    xhr.onerror = dataError;
+
+    //open request
+    xhr.open("GET", setup);
+    xhr.send();
+}
+
+function setGameOptions(e)
+{
+    //e.target is the xhr object
+    let xhr = e.target;
+
+    //turn the text into a parsable JavaScript object
+    
+    let obj = JSON.parse(xhr.responseText);
+    let results = obj.amiibo;
+    let bigString = "";
+
+    for (let i = 0; i < results.length; i++)
+    {
+        if (i != 0 && results[i - 1].name == results[i].name)
+        {
+            continue;
+        }
+        else
+        {
+            bigString += `<option value="${results[i].name}">${results[i].name}</option>`
+        }
+    }
+
+    document.querySelector("#game").innerHTML += bigString;
+}
+
+function amiiboStart()
+{
+    //create a new XHR object
+    let xhr = new XMLHttpRequest();
+
+    //url to get all amiibo game series
+    let setup = SERVICE_URL + "amiiboseries";
+
+    //set the onload handler
+    xhr.onload = setAmiiboOptions;
+
+    //set the onerror handler
+    xhr.onerror = dataError;
+
+    //open request
+    xhr.open("GET", setup);
+    xhr.send();
+}
+
+function setAmiiboOptions(e)
+{
+    //e.target is the xhr object
+    let xhr = e.target;
+
+    //turn the text into a parsable JavaScript object
+    let obj = JSON.parse(xhr.responseText);
+
+    let results = obj.amiibo;
+    let bigString = "";
+
+    for (let i = 0; i < results.length; i++)
+    {
+        if (i != 0 && results[i - 1].name == results[i].name)
+        {
+            continue;
+        }
+        else
+        {
+            bigString += `<option value="${results[i].name}">${results[i].name}</option>`
+        }
+    }
+
+    document.querySelector("#amiibo").innerHTML += bigString;
 }

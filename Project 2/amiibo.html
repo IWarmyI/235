@@ -11,31 +11,35 @@
         <b>Amiibo Finder</b>
     </header>
 
-    <div id="fields">
-        <p>Character: <input id="character" type="text" size="20" maxlength="40" autofocus value="mario" /></p>
-
-        <p>Game Series: <input id="game" type="text" size="20" maxlength="40" autofocus value="super mario" /></p>
-
-        <p>Amiibo Series: <input id="amiibo" type="text" size="20" maxlength="40" autofocus value="super mario bros." /></p>
+    <div id="instructions">
+        <p>Add any combination of the filters below to find your favorite Amiibos!</p>
     </div>
 
-    <!-- <div id="count">
-        Max Number of Results:
-        <select id="limit">
-            <option value="5" selected>5</option>
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="100">100</option>
-        </select>
-    </div> -->
+    <div id="fields">
+        <div>
+            <pre>Character: </pre>
+            <input id="character" type="text" size="20" maxlength="40" autofocus value="mario" />
+        </div>
+
+        <div id="gameseries">
+            <pre>Game Series: </pre>
+            <select id="game">
+                <option value="">Any</option>
+            </select>
+        </div>
+
+        <div id="amiiboseries">
+            <pre>Amiibo Series: </pre>
+            <select id="amiibo">
+                <option value="">Any</option>
+            </select>
+        </div>
+    </div>
 
     <div id="button">
         <button type="button" id="search" class="green">Search!</button>
     </div>
 
-    <!-- <p id="debug"></p> -->
-    
     <div id="content">
         <!--script adds content-->
     </div>

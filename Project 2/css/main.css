@@ -6,7 +6,7 @@ body, html {
     width: 95%;
     margin: 1rem auto;
 }
-header, #fields {
+header, #fields, #instructions {
     color: #f2cc8f;
 }
 header {
@@ -15,10 +15,18 @@ header {
     margin: 0;
 }
 /*user control css*/
-#fields {
+#fields, #instructions {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     font-size: 20px;
+}
+#instructions {
+    text-align: center;
+}
+#gameseries {
+    display: flex;
+    flex-flow: column nowrap;
 }
 /*button css*/
 #search {
@@ -30,6 +38,7 @@ header {
     transition-duration: 0.4s;
     font-weight: bold;
     color: #f2cc8f;
+    margin: 1rem auto;
 }
 #search:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
