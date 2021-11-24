@@ -6,13 +6,39 @@ body, html {
     width: 95%;
     margin: 1rem auto;
 }
-header, #fields, #instructions {
+header, #fields, #instructions, footer  {
     color: #f2cc8f;
+    font-family: 'Gowun Dodum', serif;
 }
 header {
     text-align: center;
     font-size: 60px;
     margin: 0;
+}
+footer {
+    font-size: 20px;
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    align-items: center;
+}
+/*link css*/
+a {
+    margin: auto 1rem;
+}
+a:link {
+    color: #ffffff;
+}
+a:visited {
+    color: #000000;
+}
+a:focus {
+    background-color: #2e4045;
+}
+a:hover {
+    background-color: #2e4045;
+}
+a:active {
+    color: #f4f1de;
 }
 /*user control css*/
 #fields, #instructions {
@@ -20,13 +46,10 @@ header {
     flex-direction: row;
     justify-content: space-evenly;
     font-size: 20px;
+    margin: 1rem auto;
 }
 #instructions {
     text-align: center;
-}
-#gameseries {
-    display: flex;
-    flex-flow: column nowrap;
 }
 /*button css*/
 #search {
@@ -54,6 +77,7 @@ header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     margin: 1rem auto;
+
 }
 #content img {
     height: 60%;
@@ -74,4 +98,12 @@ header {
 }
 #content p {
     font-size: 20px;
+}
+/*responsive css*/
+@media screen and (max-width:850px) {
+    #fields {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
 }

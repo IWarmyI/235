@@ -4,50 +4,35 @@ window.onload = init;
 //main entry point to web service
 const SERVICE_URL = "https://www.amiiboapi.com/api/";
 
+//set prefix
+const prefix = "dm1250-";
+
 function init(){
     gameStart();
     amiiboStart();
     document.querySelector("#search").onclick = getData;
 
+    //get saved search input
+
     //get input fields
     const character = document.querySelector("#character");
-    const game = document.querySelector("#game");
-    const amiibo = document.querySelector("#amiibo");
-
-    //set prefix
-    const prefix = "dm1250-";
-
     //create keys
     const characterKey = prefix + "character";
-    const gameKey = prefix + "game";
-    const amiiboKey = prefix + "amiibo";
-
     //get data
     const storedCharacter = localStorage.getItem(characterKey);
-    const storedGame = localStorage.getItem(gameKey);
-    const storedAmiibo = localStorage.getItem(amiiboKey);
-
     //display if found
     if (storedCharacter)
     {
         character.value = storedCharacter;
     }
-    if (storedGame)
-    {
-        game.value = storedGame;
-    }
-    if (storedAmiibo)
-    {
-        amiibo.value = storedAmiibo;
-    }
-
-    //set new key-value pairs if user changes text/radio button
+    //set new key-value pairs if user changes text/options
     character.onchange = e => { localStorage.setItem(characterKey, e.target.value) };
-    game.onchange = e => { localStorage.setItem(gameKey, e.target.value) };
-    amiibo.onchange = e => { localStorage.setItem(amiiboKey, e.target.value) };
 }
 
 function getData(){
+    //indicate search
+    document.querySelector("#content").innerHTML = `<p>Please wait. Searching. . .</p>`
+
     // No API Key required!
     
     //build up our URL string
@@ -90,6 +75,8 @@ function getData(){
         url += `&amiiboSeries=${amiibo}`;
     }
 
+    console.log(url);
+
     //create a new XHR object
     let xhr = new XMLHttpRequest();
 
@@ -114,7 +101,7 @@ function dataLoaded(e){
 
     //turn the text into a parsable JavaScript object
     let obj = JSON.parse(xhr.responseText);
-    
+    console.log(obj.amiibo);
     //if there is an array of results, loop through them
     let results = obj.amiibo;
     let bigString = "";
@@ -157,7 +144,7 @@ function gameStart()
     let xhr = new XMLHttpRequest();
 
     //url to get all amiibo game series
-    let setup = SERVICE_URL + "gameseries";
+    let setup = SERVICE_URL + "gameseries/";
 
     //set the onload handler
     xhr.onload = setGameOptions;
@@ -179,8 +166,25 @@ function setGameOptions(e)
     
     let obj = JSON.parse(xhr.responseText);
     let results = obj.amiibo;
+    //sort options in decending order
+    results.sort((a, b) => {
+        let nameA = a.name;
+        let nameB = b.name;
+
+        if (nameA < nameB)
+        {
+            return -1;
+        }
+        if (nameA > nameB)
+        {
+            return 1;
+        }
+
+        return 0;
+    });
     let bigString = "";
 
+    //loop through all options and add only unique series
     for (let i = 0; i < results.length; i++)
     {
         if (i != 0 && results[i - 1].name == results[i].name)
@@ -192,8 +196,18 @@ function setGameOptions(e)
             bigString += `<option value="${results[i].name}">${results[i].name}</option>`
         }
     }
+    //load game series
+    const game = document.querySelector("#game");
+    game.innerHTML += bigString;
 
-    document.querySelector("#game").innerHTML += bigString;
+    //load last search
+    const gameKey = prefix + "game";
+    const storedGame = localStorage.getItem(gameKey);
+    if (storedGame)
+    {
+        game.querySelector(`option[value="${storedGame}"]`).selected = true;
+    }
+    game.onchange = e => { localStorage.setItem(gameKey, e.target.value) };
 }
 
 function amiiboStart()
@@ -202,7 +216,7 @@ function amiiboStart()
     let xhr = new XMLHttpRequest();
 
     //url to get all amiibo game series
-    let setup = SERVICE_URL + "amiiboseries";
+    let setup = SERVICE_URL + "amiiboseries/";
 
     //set the onload handler
     xhr.onload = setAmiiboOptions;
@@ -222,10 +236,25 @@ function setAmiiboOptions(e)
 
     //turn the text into a parsable JavaScript object
     let obj = JSON.parse(xhr.responseText);
-
     let results = obj.amiibo;
-    let bigString = "";
+    //sort options in decending order
+    results.sort((a, b) => {
+        let nameA = a.name;
+        let nameB = b.name;
 
+        if (nameA < nameB)
+        {
+            return -1;
+        }
+        if (nameA > nameB)
+        {
+            return 1;
+        }
+
+        return 0;
+    });
+    let bigString = "";
+    //loop through all options and add only unique series
     for (let i = 0; i < results.length; i++)
     {
         if (i != 0 && results[i - 1].name == results[i].name)
@@ -237,6 +266,16 @@ function setAmiiboOptions(e)
             bigString += `<option value="${results[i].name}">${results[i].name}</option>`
         }
     }
+    //load amiibo series
+    const amiibo = document.querySelector("#amiiboseries #amiibo");
+    amiibo.innerHTML += bigString;
+    //load last search
+    const amiiboKey = prefix + "amiibo";
+    const storedAmiibo = localStorage.getItem(amiiboKey);
+    if (storedAmiibo)
+    {
+        amiibo.querySelector(`option[value="${storedAmiibo}"]`).selected = true;
+    }
 
-    document.querySelector("#amiibo").innerHTML += bigString;
+    amiibo.onchange = e => { localStorage.setItem(amiiboKey, e.target.value) };
 }
