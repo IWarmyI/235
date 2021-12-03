@@ -1,33 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
 body {
   color:#fcf5e3;
-  font-family: "Calligraffitti";
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 20px;
   text-align: center;
   background: brown url(../images/bg.jpg);
 }
 
-#game {
-  background: #9c9;
-  padding: 5px;
+p, h4 {
+  text-align: left;
+}
 
-  position: relative;
-  background: #232 url(../images/table.jpg);
-  width: 500px;
-  height: 460px;
-  margin: 0 auto;
-
-  border-radius: 10px;
-  border: 1px solid #666;
-  box-shadow: 0 -1px 0 #999, 0 1px 0 #999, inset 0 1px 6px #000;
-
-  display: flex;
-  justify-content: center;
+#wrapper {
+  display:flex;
+  flex-flow: column nowrap;
   align-items: center;
 }
 
+img {
+  display: none;
+}
+
+#game {
+  padding: 5px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+}
+
 #cards {
-  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
   width: 380px;
   height: 400px;
+  overflow-y: scroll;
+}
+
+header, footer {
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 /* Define the 3D perspective view and dimension of each card. */
@@ -45,6 +61,7 @@ body {
   position: absolute;
   transition: all .3s;
   backface-visibility: hidden;
+  font-family: "Calligraffitti";
 }
 
 .front {
@@ -70,46 +87,65 @@ body {
 *** CSS Spritesheets ***
 Here we define the face graphics of the card deck:
 R=row & C=column
-.cardR01C01 would be card #1 in the upper-left corner
-.cardR04C13 would be card #52 in the bottom-right corner
-and so on ...
-
-We have only defined 24 card faces below - you would need to do the other 28 yourself
 (The cards are 80x120 in size)
 */
 
 /* Row 1 */
-.cardR01C01 {background-position:  0 0;}
+.cardR01C01 {background-position:    0px 0;}
 .cardR01C02 {background-position:  -80px 0;}
 .cardR01C03 {background-position: -160px 0;}
-/* You can do columns 4-10 if you wish */
+.cardR01C04 {background-position: -240px 0;}
+.cardR01C05 {background-position: -320px 0;}
+.cardR01C06 {background-position: -400px 0;}
+.cardR01C07 {background-position: -480px 0;}
+.cardR01C08 {background-position: -560px 0;}
+.cardR01C09 {background-position: -640px 0;}
+.cardR01C10 {background-position: -720px 0;}
 .cardR01C11 {background-position: -800px 0;}
 .cardR01C12 {background-position: -880px 0;}
 .cardR01C13 {background-position: -960px 0;}
 
 /* Row 2 */
-.cardR02C01 {background-position:  0px -120px;}
-.cardR02C02 {background-position: -80px -120px;}
+.cardR02C01 {background-position:    0px -120px;}
+.cardR02C02 {background-position:  -80px -120px;}
 .cardR02C03 {background-position: -160px -120px;}
-/* You can do columns 4-10 if you wish */
+.cardR02C04 {background-position: -240px -120px;}
+.cardR02C05 {background-position: -320px -120px;}
+.cardR02C06 {background-position: -400px -120px;}
+.cardR02C07 {background-position: -480px -120px;}
+.cardR02C08 {background-position: -560px -120px;}
+.cardR02C09 {background-position: -640px -120px;}
+.cardR02C10 {background-position: -720px -120px;}
 .cardR02C11 {background-position: -800px -120px;}
 .cardR02C12 {background-position: -880px -120px;}
 .cardR02C13 {background-position: -960px -120px;}
 
 /* Row 3 */
-.cardR03C01 {background-position:  0 -240px;}
+.cardR03C01 {background-position:    0px -240px;}
 .cardR03C02 {background-position:  -80px -240px;}
 .cardR03C03 {background-position: -160px -240px;}
-/* You can do columns 4-10 if you wish */
+.cardR03C04 {background-position: -240px -240px;}
+.cardR03C05 {background-position: -320px -240px;}
+.cardR03C06 {background-position: -400px -240px;}
+.cardR03C07 {background-position: -480px -240px;}
+.cardR03C08 {background-position: -560px -240px;}
+.cardR03C09 {background-position: -640px -240px;}
+.cardR03C10 {background-position: -720px -240px;}
 .cardR03C11 {background-position: -800px -240px;}
 .cardR03C12 {background-position: -880px -240px;}
 .cardR03C13 {background-position: -960px -240px;}
 
 /* Row 4 */
-.cardR04C01 {background-position:  0 -360px;}
+.cardR04C01 {background-position:    0px -360px;}
 .cardR04C02 {background-position:  -80px -360px;}
 .cardR04C03 {background-position: -160px -360px;}
-/* You can do columns 4-10 if you wish */
+.cardR04C04 {background-position: -240px -360px;}
+.cardR04C05 {background-position: -320px -360px;}
+.cardR04C06 {background-position: -400px -360px;}
+.cardR04C07 {background-position: -480px -360px;}
+.cardR04C08 {background-position: -560px -360px;}
+.cardR04C09 {background-position: -640px -360px;}
+.cardR04C10 {background-position: -720px -360px;}
 .cardR04C11 {background-position: -800px -360px;}
 .cardR04C12 {background-position: -880px -360px;}
 .cardR04C13 {background-position: -960px -360px;}

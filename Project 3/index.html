@@ -4,128 +4,31 @@
 	<meta charset="utf-8" />
   <title>Chibi Matching Game</title>
   <link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet">
+
   <link rel="stylesheet" href="css/chibigame.css" />
+
+  <script src="js/main.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Chibi Matching Game</h1>
-  </header>
-
-  <section id="game">
-    <div id="cards">
-      <div class="card">
-        <div class="face front"></div>
-        <div class="face back"></div>
-      </div> <!-- .card -->
-    </div> <!-- #cards -->
-  </section> <!-- #game -->
-
-  <footer>
-    <p>Don't make the Chibi's mad!</p>
-  </footer>
-
- <script>
- window.onload = ()=>{
- 	initBoard();
- }
- 
-  const numCards = 12;
-  
-  // 6 pairs of cards in the initial deck
-  let deck = [
-    'cardR01C01', 'cardR01C01',
-    'cardR03C03', 'cardR03C03',
-    'cardR04C01', 'cardR04C01',
-    'cardR01C12', 'cardR01C12',
-    'cardR02C11', 'cardR02C11',
-    'cardR03C12', 'cardR03C12',
-  ];
-  
-
-  function initBoard(){
-	// here we pass array.sort() a *compare function* that returns a random number
-	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-	deck.sort(()=>{ return 0.5 - Math.random() }); // randomize the deck
-
-	// in this loop we clone the existing card on the page 11 times
-	// https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode
-	for(let i=0; i<numCards-1; i++){
-	  let newCard = document.querySelector(".card").cloneNode(true);
-	  document.querySelector("#cards").appendChild(newCard);
-	}
-
-	/* Now position the cards on the table, and assign a face: */
-	let cards = document.querySelectorAll("#cards > .card");
-	let index = 0; // we need this for positioning
-	 
-	// loop through all of the card elements and assign a face to each card
-	for (let element of cards){
-		let x = (element.offsetWidth  + 20) * (index % 4);
-		let y = (element.offsetHeight + 20) * Math.floor(index / 4);
-		element.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
-
-		// get a pattern from the shuffled deck
-		let pattern = deck.pop();
-
-		// visually apply the pattern on the card's back side.
-		// we do this by adding a class through the .classList property
-		// https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
-		element.querySelector(".back").classList.add(pattern);
-
-		// embed the pattern data into the DOM element.
-		// this is an example of HTML5 Custom Data attributes
-		// http://html5doctor.com/html5-custom-data-attributes/
-		element.setAttribute("data-pattern",pattern);
-
-		// listen for the click event on each card <div> element.
-		element.onclick = cardClicked;
-		index ++;
-	}
-  }
-
-	function cardClicked() {
-		// we do nothing if there are already two cards flipped.
-		if (document.querySelectorAll(".card-flipped").length > 1) return;
-		
-		// inside of an event handling function, 'this' is the element that called the function
-		this.classList.add("card-flipped");
-
-		// check the pattern of both flipped card 0.7s later.    
-		if (document.querySelectorAll(".card-flipped").length == 2) {
-			// setTimeout() is used to schedule the execution a piece of code *once*
-			// https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
-			setTimeout(checkPattern, 700);
-		}
-	}
-
-  function checkPattern() {
-	 if (isSamePattern()) {
-	 // here we are using array.forEach(), rather than for...of, for no particular reason :-)
-      document.querySelectorAll(".card-flipped").forEach((element)=>{
-      	element.classList.remove("card-flipped");
-      	element.classList.add("card-removed");
-     	element.addEventListener("transitionend",removeMatchedCards);
-      });
-    } else {
-    // I prefer array.forEach() over for...of when I can write it as a "one-liner"
-      document.querySelectorAll(".card-flipped").forEach((element)=>{element.classList.remove("card-flipped")});
-    }
-  }
-
-  function isSamePattern() {
-	let cards = document.querySelectorAll(".card-flipped");
-	// the dataset object holds the .data-pattern property we created for each card in initBoard()
-	let pattern1 = cards[0].dataset.pattern;
-	let pattern2 = cards[1].dataset.pattern;
-	return pattern1 == pattern2;
-  }
-
-  function removeMatchedCards(){
-  	// another .forEach() "one-liner"
-    document.querySelectorAll(".card-removed").forEach((element)=>{element.parentNode.removeChild(element);});
-  }
-  
- </script>
-
+	<div id="wrapper">
+		<header>
+			<h1>Chibi Matching Game</h1>
+		</header>
+	
+		<section id="game">
+			<div id="score"></div>
+			<div id="cards">
+				<div class="card">
+					<div class="face front"></div>
+					<div class="face back"></div>
+				</div> <!-- .card -->
+			</div> <!-- #cards -->
+		</section> <!-- #game -->
+	
+		<footer>
+			<p>Don't make the Chibi's mad!</p>
+			<a href="about.html"><p>About></p></a>
+		</footer>
+	</div>
 </body>
 </html>
