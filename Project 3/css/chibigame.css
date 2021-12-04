@@ -38,12 +38,12 @@ img {
   flex-flow: row nowrap;
   width: 380px;
   height: 400px;
-  overflow-y: scroll;
 }
 
-header, footer {
-  display: flex;
-  flex-flow: column nowrap;
+footer {
+  position: absolute;
+  /*increase by 150px per level*/
+  top: 600px;
 }
 
 /* Define the 3D perspective view and dimension of each card. */
