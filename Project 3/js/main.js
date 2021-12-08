@@ -96,7 +96,7 @@ function checkPattern() {
         document.querySelector("#score").innerHTML = `<p>Score: ${score}</p>`;
         // check if all cards are gone
         cardsLeft -= 2;
-        if (cardsLeft == 0)
+        if (cardsLeft == 0 && currentLevel < 3)
         {
             NextLevel();
         }
@@ -131,7 +131,20 @@ function NextLevel()
     currentLevel++;
     numCards += 4;
     cardsLeft = numCards;
+    switch(currentLevel)
+    {
+        case 2:
+            document.querySelector("footer").style.top = "750px";
+            break;
+        case 3:
+            document.querySelector("footer").style.top = "900px";  
+            break;
+        default:
+            document.querySelector("footer").style.top = "600px";
+            document.querySelector("#player").classList.add("cardR03C04");
 
+            break;
+    }
     RandomDeck();
     DealCards();
 }
