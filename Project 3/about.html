@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 3 Proposal</title>
     <link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet">
-    <link rel="stylesheet" href="css/chibigame.css" />
+    <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
     <header>
@@ -14,43 +14,62 @@
         <h3>Darvin Muralitharan</h3>
     </header>
 
-    <h4><u>High Concept</u></h4>
-    <p>You are a knight out to slay the dragon and save the princess. Race to match all cards as fast as possible to save the princess before time runs out!</p>
-
     <hr>
 
-    <h4><u>Genre and Platform</u></h4>
+    <h1>Proposal</p>
+
+    <h4>High Concept</h4>
+    <p>You are a knight out to slay the dragon and save the princess. Race to match all cards as fast as possible to save the princess before time runs out!</p>
+
+
+    <h4>Genre and Platform</h4>
     <p>Genre: Card</p>
     <p>Platform: Desktop Web</p>
 
-    <hr>
 
-    <h4><u>Story</u></h4>
+    <h4>Story</h4>
     <p>The King's daughter has been kidnapped and he appoints he top knight, you, to go out and rescue her.</p>
     
-    <hr>
 
-    <h4><u>Graphics</u></h4>
+    <h4>Graphics</h4>
     <p>In terms of graphics, I'm aiming for a cartoony feel and definitely a light look on everything. There will be a timer and score counter left on the sides of the screen for the player to get information about their progress as well as a high score that will be kept locally.</p>
 
-    <hr>
 
-    <h4><u>Gameplay</u></h4>
+    <h4>Gameplay</h4>
     <p>The user will be able to select cards with their mouse and will learn from just clicking around and discovered the ability to select cards. After the user finishes all cards on screen and new set will show with more cards creating a new level. There will be 3 levels with the user gaining points for correct matches and losing points for incorrect matches.</p>
     
     <p>To advance a level, an AI enemy will be shown with a set amount of health that the player must defeat or have more points than once all cards are gone. The AI will have the same scoring applied and can defeat you if it makes half of the available matches.</p>
 
-    <p>Note: The timer mentioned in the graphics section was ultimately decided to be removed and instead allow the game to be fully played out before either the next level starts or the game ends.</p>
 
-    <hr>
-
-    <h4><u>Mockups</u></h4>
+    <h4>Mockups</h4>
     <img src="images/ingameMockup.png" alt="ingame">
-    <img src="images/gameoverMockup.png" alt="gameover">\
+    <img src="images/gameoverMockup.png" alt="gameover">
 
     <hr>
 
-    <h4><u>About the Developers</u></h4>
-    <p>My name is Darvin Muralitharan and I'm a second-year at Rochester Institute of Technology. I'm majoring in Game Design & Development and have interests in programming with experience in C#, HTML, and JavaScript. 
-</body>
+    <h1>Documentation</h1>
+
+    <h4>Design Process Notes</h4>
+    <p>This project I had a very small idea of what I wanted to do. The original plan for my game had a much larger scope where a timer was included, and the player was able to take damage. However, due to time constraints, I ended up ultimately removing the timer and player damage. In the end the flow of my game and its pacing seemed to work pretty well still since instead of creating an endgame where the player would be defeated, the player could still go through all 3 levels just with a less possible score. My idea became one where a missed match gave time for the enemy to heal the worth of one attack in that level, this forced the player to actually pick cards carefully if they wanted to defeat the enemy for a bonus 5 points. The sounds were the last thing I implemented partly because they're easy and partly because I completely forgot about that requirement until I noticed someone ask a question about on slack. I definitely wish I could have done more and am considering maybe doing more with it after final grades have been posted and I'm waiting until the next semester, which would definitely help improve my portfolio.</p>
+
+
+    <h4>Source Information</h4>
+    <p>To shuffle the level deck and full deck, I used an array shuffle method I had found on <a href="https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array" target="display">Stack Overflow</a> which allowed the deck to be shuffled with more variety in the card choices, though I do feel there is still some repetition. The hero, enemy, and card images were all used from the provided example. I probably should have asked about whether this was allowed or not but during the project, I used it as is because my art skills are not very good. The background image used to create a fantasy feeling was taken from <a href="https://cdn4.vectorstock.com/i/1000x1000/33/73/cartoon-fantasy-forest-vector-19893373.jpg" target="display">Vector Stock</a>. For sound effects, I found a nice card flip sound at <a href="https://orangefreesounds.com/card-flip-sound-effect/" target="display">Orange Free Sounds</a>. The <a href="https://www.youtube.com/watch?v=_NM0Auysb1M" target="display">heal</a> and <a href="https://www.youtube.com/watch?v=Oa1mfoOInbA" target="display">sword swing</a> sounds were taken from YouTube and converted to mp3. I did have to edit the sword effect so there wasn't a delay and the card flip effect so that the sound ended sooner.</p>
+
+
+    <h4>How Did I Meet The Requirements?</h4>
+    <p>To make the match game, I used the example provided in the project details as I was much more comfortable with using DOM instead of PIXI. The site is somewhat responsive in the case that the hero and enemy images shrink to the page size to a limit but then get clipped due to me using margins. I'm mostly sure the page displays at a smaller size fully before the clips though.</p>
+
+
+    <h4>Anything Special?</h4>
+    <p>I don't feel I did as much as I could have with this project, but I do like how I implemented a fight where making matches deals damage to an enemy and an incorrect match heals them. It doesn’t affect the gameplay loop in a huge way and is instead, rather a bonus objective of sorts that gives more points after a level which was my intended goal.</p>
+
+    <hr>
+
+    <footer>
+        <h4>About the Developers</h4>
+        <p>My name is Darvin Muralitharan and I'm a second-year at Rochester Institute of Technology. I'm majoring in Game Design & Development and have interests in programming with experience in C#, HTML, and JavaScript.</p>
+        <a href="index.html">Back To The Game!</a>
+    </footer>
+    </body>
 </html>

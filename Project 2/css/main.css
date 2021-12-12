@@ -31,12 +31,6 @@ a:link {
 a:visited {
     color: #000000;
 }
-a:focus {
-    background-color: #2e4045;
-}
-a:hover {
-    background-color: #2e4045;
-}
 a:active {
     color: #f4f1de;
 }

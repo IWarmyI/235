@@ -1,25 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
-
-body {
-  color:#fcf5e3;
+/*main page*/
+html, body {
   font-family: 'Gowun Dodum', sans-serif;
   font-size: 20px;
   text-align: center;
-  background: brown url(../images/bg.jpg);
+  color: rgba(255, 255, 255, 0.829);
+  background: rgb(214, 138, 138);
+  padding: 0;
+  margin: 0;
+  /* source: https://cdn4.vectorstock.com/i/1000x1000/33/73/cartoon-fantasy-forest-vector-19893373.jpg*/
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+}
+/*link css*/
+a {
+  margin: 0;
+}
+a:link {
+  color: #ffffff;
+}
+a:visited {
+  color: #ffffff;
+}
+a:hover {
+  background-color: #5ca15c;
+}
+/*hero and enemy*/
+#enemy img, #hero img{
+  border-radius: 10px;
+  width: 150px;
+  height: auto;
 }
 
+#hero img {
+  margin-right: 10rem;
+}
+
+#enemy img {
+  margin-left: 10rem;
+}
+
+#enemy p{
+  margin-left: 11rem;
+}
+/*about page*/
 p, h4 {
   text-align: left;
 }
-
+/*page flexbox*/
 #wrapper {
   display:flex;
   flex-flow: column nowrap;
   align-items: center;
-}
-
-img {
-  display: none;
 }
 
 #game {
@@ -27,10 +63,15 @@ img {
   margin: 0 auto;
 
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   align-items: center;
-  flex: 1 0 auto;
+}
+
+#play {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 #cards {
@@ -39,11 +80,15 @@ img {
   width: 380px;
   height: 400px;
 }
-
-footer {
+/*game page footer*/
+#footer {
   position: absolute;
   /*increase by 150px per level*/
   top: 600px;
+}
+
+#footer p {
+  text-align: center;
 }
 
 /* Define the 3D perspective view and dimension of each card. */
