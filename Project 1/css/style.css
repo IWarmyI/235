@@ -13,7 +13,7 @@ div {
     color: #ffffff;
 }
 h2 {
-    font-family: 'Gowun Dodum', serif;
+    font-family: 'Bakbak One', serif;
     color: #ffffff;
 }
 /*header/footer bg css*/
@@ -22,16 +22,29 @@ header, footer {
     background-color: #303348;
     font-size: 40px;
 }
+footer {
+    font-size: 30px;
+    background-color: #1d2038;
+}
+#links {
+    display: flex;
+}
+#links hr {
+    margin: 0 1rem;
+    height: 100%
+}
 /*link css*/
 a {
-    text-decoration: none;
+    text-decoration: underline;
+}
+nav a {
     margin: auto 1rem;
 }
 a:link {
     color: #ffffff;
 }
 a:visited {
-    color: #000000;
+    color: #afafaf8f;
 }
 a:focus {
     background-color: #2e4045;
@@ -46,32 +59,34 @@ a:active {
 .header, .footer, .project, .more {
     display: flex;
     clear: both;
-    align-items: center;
     justify-content: space-between;
     color: #ffffff;
     margin: 1rem 0;
 }
 /*page spacing*/
-main {
-    margin: 2rem;
-}
 /*img and tagline css*/
 .me {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 figure { 
     display: inline-block;
     text-align: center;
+    margin-right: 2rem;
 }
 figcaption {
     font-size: 30px;
     line-height: 30px;
 }
+figcaption hr {
+    margin: 1rem;
+}
 figure img {
     height: 200px;
     width: 200px;
+    margin: 1rem;
 }
 .me div{
     max-width: 1000px;
@@ -85,6 +100,8 @@ figure img {
 }
 .p1, .p2, .p3 {
     justify-content: space-between;
+    align-items: center;
+    margin: 0;
 }
 .p1 img, .p3 img {
     margin-right: 3rem;
@@ -95,19 +112,33 @@ figure img {
 .p2 img {
     margin-left: 3rem;
 }
+.project img {
+    width: 600px;
+}
+.more {
+    background-color: #2b2d4b;
+    margin: 0;
+    padding: 1rem;
+}
 #game1, #game2, #game3{
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 1rem;
-    text-align: center;
 }
 h2 {
     font-weight: lighter;
-    text-decoration: underline;
 }
-u {
-    text-decoration-thickness: 2px;
+hr {
+    border: 1px solid white;
+    margin: 2rem auto;
+}
+#projectOverview {
+    background-color: #313244;
+    padding: 2rem;
+}
+#projectOverview hr {
+    margin: 5rem auto;
 }
 /*mobile layout*/
 @media screen and (max-width:850px) {
@@ -116,6 +147,7 @@ u {
     }
     .header {
         flex-direction: column;
+        text-align: center;
     }
     .nav {
         display: flex;
@@ -128,7 +160,7 @@ u {
         flex-flow: column wrap;
     }
     .p1 img, .p2 img, .p3 img {
-        margin: 0;
+        margin-bottom: 1rem;
         width: 80%;
     }
     .project {
@@ -139,10 +171,22 @@ u {
     }
     .footer {
         flex-direction: column-reverse;
+        text-align: center;
+        font-size: 25px;
     }
     .footer div {
         display: flex;
         flex-flow: column wrap;
         align-items: center;
+    }
+    #links div{
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    #links hr {
+        display: none;
+    }
+    #links a {
+        margin: auto 1rem;
     }
 }

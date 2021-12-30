@@ -3,25 +3,29 @@
 <head>
     <!--font import-->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
     </style>
-    <!--css-->
+
+    <!--my css-->
     <link rel="stylesheet" href="css/style.css">
+
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Darvin M. | Portfolio</title>
+    <title>Darvin Muralitharan | Portfolio</title>
 </head>
 <body>
     <!--header-->
     <header id="navbar">
         <div class="header">
-            <u>Darvin Muralitharan</u>
+            Darvin Muralitharan  
             <nav class="nav">
                 <a href="#about">About Me</a>
                 <a href="#project">Projects</a>
-                <a href="#more">Project Info</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -42,72 +46,62 @@
             </div>
         </div>
         <!--project overviews-->
-        <div class="project p1">
-            <img src="https://picsum.photos/seed/warmy/600/300" alt="placeholder1" id="project">
-            <div>
-                <h2>Placeholder Game 1</h2>
-                <p>
-                    Description of the project, technologies and techniques used, my role in the project,description of the project, technologies and techniques used, my role in the project,
-                    description of the project, technologies and techniques used, my role in the project,
-                    description of the project, technologies and techniques used, my role in the project.
-                </p>
+        <section id="projectOverview">
+            <div class="project p1">
+                <img src="media/project2.png" alt="project2" id="project">
+                <div>
+                    <h2>Amiibo Finder</h2>
+                    <p>
+                        The Amiibo Finder utilizes the <a href="https://www.amiiboapi.com/docs/" target="display">AmiiboAPI</a> to filter out amiibos through various filters such as character names, game series, amiibo series, or a combination of them all. This project was made during my time in Intro To Game Web Tech at RIT and was my first step into understanding how to utilize an API. Figuring out how to load options for series through the API was definitely a big challenge as I had never tried such a thing before and a lot of guessing was made to make it but I'm happy with the way it turned out, making the code more optimized in the process. <a href="https://people.rit.edu/dm1250/235/project2/" target="display">Feel free to try it out!</a>
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="project p2">
-            <img src="https://picsum.photos/seed/darvin/600/300" alt="placeholder2">
-            <div>
-                <h2>Placeholder Game 2</h2>
-                <p>
-                    Description of the project, technologies and techniques used, my role in the project,description of the project, technologies and techniques used, my role in the project,
-                    description of the project, technologies and techniques used, my role in the project,
-                    description of the project, technologies and techniques used, my role in the project.
-                </p>
+
+            <hr>
+
+            <div class="project p2">
+                <img src="media/project3.png" alt="project3">
+                <div>
+                    <h2>Princess Match!</h2>
+                    <p>
+                        Princess Match! is a small game I developed using the browser DOM for a final project in Intro To Game Web Tech at RIT that has the player aim to match cards to affect an enemy they fight in each level. The original scope was much larger than anticipated with an included timer and health for the player to manage in the game. Although small, I'm proud of what was done for the project and definitely plan to flesh it out even more with some more features such as the player health and an AI to play against. <a href="https://people.rit.edu/dm1250/235/project3/" target="display">You can play the game here!</a>
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="project p3">
-            <img src="https://picsum.photos/seed/lisa/600/300" alt="placeholder3">
-            <div>
-                <h2>Placeholder Game 3</h2>
-                <p>
-                    Description of the project, technologies and techniques used, my role in the project,description of the project, technologies and techniques used, my role in the project,
-                    description of the project, technologies and techniques used, my role in the project,
-                    description of the project, technologies and techniques used, my role in the project.
+
+            <hr>
+
+            <div class="project p3">
+                <img src="media/zbomber.png" alt="z-bomber igme 202">
+                <div>
+                    <h2>Z-Bomber</h2>
+                    <p>
+                        Z-Bomber is a small game I made in Unity, built to WebGL, in my Interactive Media Development class at RIT. The player can be difficult to control but the main focus of the project was the implementation of <a href="http://www.red3d.com/cwr/steer/gdc99/" target="display">Reynold's steering behavior for autonomous agents</a> which are the zombies in this case. They use a variety of forces to avoid each other, obstacles, and the edge of the map all while chasing after you to get a bite. The player can use bombs dropping them with the 'Spacebar' to protect themselves while trying to run away with 'WASD'. Developing the steering forces was definitely a big challenge as it's hard to get forces to come out exactly right, especially when trying to make it in a simulation. <a href="https://igme-202-2211.github.io/project-3-IWarmyI/" target="display">You can check it out here!</a>
+                </div>
             </div>
-        </div>
-        <!--more specific project info-->
-        <div class="more">
-            <div id="game1">
-                <h2 id="more">Placeholder Game 1</h2>
-                <img src="https://picsum.photos/seed/connie/300" alt="placeholder4">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit unde amet, numquam eos deleniti quasi deserunt non ullam repellendus tempore nisi atque vitae, eaque, explicabo architecto doloremque inventore nulla nostrum fugiat earum expedita ratione iste. Est sed iusto in omnis at aliquid voluptatum neque, ea provident, amet placeat perspiciatis similique eius nihil error quas ullam numquam quae doloremque pariatur, velit assumenda officia. Omnis quibusdam laboriosam sit commodi corrupti, voluptas eaque tempore quas similique unde aliquid odio eum nulla ab, eos qui laudantium error quo ipsa atque molestiae facere neque praesentium? Tenetur animi officia aspernatur nam facere vitae aliquam totam doloribus.
-                </p>
-            </div>
-            <div id="game2">
-                <h2>Placeholder Game 2</h2>
-                <img src="https://picsum.photos/seed/pat/300" alt="placeholder4">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque commodi illum impedit officiis sint, itaque beatae similique placeat provident vitae sunt doloremque obcaecati blanditiis culpa totam distinctio cupiditate minima aspernatur cum, temporibus quaerat natus, aliquam iste? Enim nostrum ea, natus nobis deleniti optio iste qui sed incidunt commodi rem ullam, sit veniam aspernatur eaque placeat. Ex qui quis ratione eaque, aut magnam quaerat expedita odio. Labore dicta libero repellat nemo ab, quaerat in. Numquam consectetur molestiae tempore eius id perspiciatis, incidunt excepturi amet quidem. Nostrum, eaque sit similique minima, sequi explicabo, quod quis consectetur praesentium ipsam odio dolor illo! Illum!
-                </p>
-            </div>
-            <div id="game3">
-                <h2>Placeholder Game 3</h2>
-                <img src="https://picsum.photos/seed/andy/300" alt="placeholder4">
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem aliquam nobis fugiat illum iure illo esse quia pariatur autem natus! At, vero ipsa, hic, a sunt placeat temporibus tempore culpa sint laboriosam qui quidem odio! Voluptas illum enim, minima reprehenderit repudiandae delectus odit deserunt soluta exercitationem earum mollitia assumenda porro iusto voluptate animi quas provident harum? Nihil a quaerat libero beatae? Iusto architecto id, porro quae temporibus odio ad modi veritatis sed eligendi. Sapiente consectetur obcaecati omnis quam quod repellat harum, molestiae eligendi, consequuntur error eveniet voluptates nobis nam deleniti saepe odit deserunt vitae nostrum doloremque incidunt iusto repudiandae nemo?
-                </p>
-            </div>
-        </div>
+        </section>
     </main>
     <!--footer-->
     <footer id="contact">
         <div class="footer">
             Darvin Muralitharan &copy; 2021
-            <div>
-                <u>Contact:</u>
-                <a href="mailto:muralitharan.darvin@gmail.com">Email</a>
-                <a href="resume.pdf" target="display">Resume</a>
-                <a href="https://github.com/IWarmyI" target="display">Github</a>
+            <div id="links">
+                Contact:
+                <div>
+                    <a href="mailto:muralitharan.darvin@gmail.com">Email</a>
+                    <i class="far fa-envelope-open"></i>
+                </div>
+                <hr>
+                <div>
+                    <a href="resume.pdf" target="display">Resume</a>
+                    <i class="far fa-file"></i>
+                </div>
+                <hr>
+                <div>
+                    <a href="https://github.com/IWarmyI" target="display">Github</a>
+                    <i class="fab fa-github"></i>
+                </div>
+                <hr>
                 <a href="documentation.pdf" target="display">Documentation</a>
             </div>
         </div>
