@@ -25,7 +25,7 @@
             Darvin Muralitharan  
             <nav class="nav">
                 <a href="#about">About Me</a>
-                <a href="#project">Projects</a>
+                <a href="#projectHeader">Projects</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -47,24 +47,24 @@
         </div>
         <!--project overviews-->
         <section id="projectOverview">
+            <h2 id="projectHeader">Projects</h2>
             <div class="project p1">
-                <img src="media/project2.png" alt="project2" id="project">
+                <img src="media/zbomber.png" alt="z-bomber igme 202">
                 <div>
-                    <h2>Amiibo Finder</h2>
+                    <h2>Z-Bomber</h2>
                     <p>
-                        The Amiibo Finder utilizes the <a href="https://www.amiiboapi.com/docs/" target="display">AmiiboAPI</a> to filter out amiibos through various filters such as character names, game series, amiibo series, or a combination of them all. This project was made during my time in Intro To Game Web Tech at RIT and was my first step into understanding how to utilize an API. Figuring out how to load options for series through the API was definitely a big challenge as I had never tried such a thing before and a lot of guessing was made to make it but I'm happy with the way it turned out, making the code more optimized in the process. <a href="https://people.rit.edu/dm1250/235/project2/" target="display">Feel free to try it out!</a>
-                    </p>
+                        Z-Bomber is a small game I made in Unity, built to WebGL, in my Interactive Media Development class at RIT. The player can be difficult to control but the main focus of the project was the implementation of <a href="http://www.red3d.com/cwr/steer/gdc99/" target="display">Reynold's steering behavior for autonomous agents</a> which are the zombies in this case. They use a variety of forces to avoid each other, obstacles, and the edge of the map all while chasing after you to get a bite. The player can use bombs dropping them with the 'Spacebar' to protect themselves while trying to run away with 'WASD'. Developing the steering forces was definitely a big challenge as it's hard to get forces to come out exactly right, especially when trying to make it in a simulation. <br> <a href="https://igme-202-2211.github.io/project-3-IWarmyI/" target="display">You can check it out here!</a>
                 </div>
             </div>
 
             <hr>
 
             <div class="project p2">
-                <img src="media/project3.png" alt="project3">
+                <img src="media/match.png" alt="project2">
                 <div>
                     <h2>Princess Match!</h2>
                     <p>
-                        Princess Match! is a small game I developed using the browser DOM for a final project in Intro To Game Web Tech at RIT that has the player aim to match cards to affect an enemy they fight in each level. The original scope was much larger than anticipated with an included timer and health for the player to manage in the game. Although small, I'm proud of what was done for the project and definitely plan to flesh it out even more with some more features such as the player health and an AI to play against. <a href="https://people.rit.edu/dm1250/235/project3/" target="display">You can play the game here!</a>
+                        Princess Match! is a small game I developed using the browser DOM for a final project in Intro To Game Web Tech at RIT that has the player aim to match cards to affect an enemy they fight in each level. The original scope was much larger than anticipated with an included timer and health for the player to manage in the game. Although small, I'm proud of what was done for the project and definitely plan to flesh it out even more with some more features such as the player health and an AI to play against. <br> <a href="https://people.rit.edu/dm1250/235/project3/" target="display">You can play the game here!</a>
                     </p>
                 </div>
             </div>
@@ -72,13 +72,28 @@
             <hr>
 
             <div class="project p3">
-                <img src="media/zbomber.png" alt="z-bomber igme 202">
+                <img src="media/amiibo.png" alt="project3">
                 <div>
-                    <h2>Z-Bomber</h2>
+                    <h2>Amiibo Finder</h2>
                     <p>
-                        Z-Bomber is a small game I made in Unity, built to WebGL, in my Interactive Media Development class at RIT. The player can be difficult to control but the main focus of the project was the implementation of <a href="http://www.red3d.com/cwr/steer/gdc99/" target="display">Reynold's steering behavior for autonomous agents</a> which are the zombies in this case. They use a variety of forces to avoid each other, obstacles, and the edge of the map all while chasing after you to get a bite. The player can use bombs dropping them with the 'Spacebar' to protect themselves while trying to run away with 'WASD'. Developing the steering forces was definitely a big challenge as it's hard to get forces to come out exactly right, especially when trying to make it in a simulation. <a href="https://igme-202-2211.github.io/project-3-IWarmyI/" target="display">You can check it out here!</a>
+                        The Amiibo Finder utilizes the <a href="https://www.amiiboapi.com/docs/" target="display">AmiiboAPI</a> to filter out amiibos through various filters such as character names, game series, amiibo series, or a combination of them all. This project was made during my time in Intro To Game Web Tech at RIT and was my first step into understanding how to utilize an API. Figuring out how to load options for series through the API was definitely a big challenge as I had never tried such a thing before and a lot of guessing was made to make it but I'm happy with the way it turned out, making the code more optimized in the process. <br> <a href="https://people.rit.edu/dm1250/235/project2/" target="display">Feel free to try it out!</a>
+                    </p>
                 </div>
             </div>
+
+            <hr>
+
+            <div class="project p4">
+                <img src="media/tatertots.png" alt="tatertots" id="project">
+                <div>
+                    <h2>Tater-Tots</h2>
+                    <p>
+                        Tater-Tots was a small game developed by a team including me and four other freshmen. Using C# and MonoGame, we created a runner over the course of a semester for a class project. While the project can be considered academic, it was also a personal project as we were free to go wherever we wanted with our game once the scope was determined to be doable. It was an interesting experience where I was able to gain some insight into the game development industry and its process. While it still contains plenty of bugs, it was fun spending time on it and I would be excited to go back to it at some point. <br> <a href="Tater-Tots.zip" target="display">You can download it here!</a>
+                    </p>
+                </div>
+            </div>
+
+            
         </section>
     </main>
     <!--footer-->
@@ -100,9 +115,6 @@
                 <div>
                     <a href="https://github.com/IWarmyI" target="display">Github</a>
                     <i class="fab fa-github"></i>
-                </div>
-                <hr>
-                <a href="documentation.pdf" target="display">Documentation</a>
             </div>
         </div>
     </footer>

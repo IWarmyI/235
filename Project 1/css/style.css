@@ -20,7 +20,7 @@ h2 {
 header, footer {
     padding: 1rem;
     background-color: #303348;
-    font-size: 40px;
+    font-size: 30px;
 }
 footer {
     font-size: 30px;
@@ -98,7 +98,7 @@ figure img {
 .me, .project, .more {
     font-size: 20px;
 }
-.p1, .p2, .p3 {
+.p1, .p2, .p3, .p4 {
     justify-content: space-between;
     align-items: center;
     margin: 0;
@@ -106,10 +106,10 @@ figure img {
 .p1 img, .p3 img {
     margin-right: 3rem;
 }
-.p2 {
+.p2, .p4 {
     flex-direction: row-reverse;
 }
-.p2 img {
+.p2 img, .p4 img {
     margin-left: 3rem;
 }
 .project img {
@@ -126,6 +126,11 @@ figure img {
     justify-content: center;
     margin: 1rem;
 }
+h1 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+}
 h2 {
     font-weight: lighter;
 }
@@ -136,6 +141,10 @@ hr {
 #projectOverview {
     background-color: #313244;
     padding: 2rem;
+}
+#projectHeader {
+    text-align: center;
+    font-size: 30px;
 }
 #projectOverview hr {
     margin: 5rem auto;
@@ -156,10 +165,10 @@ hr {
     .me {
         flex-flow: column wrap;
     }
-    .p1, .p2, .p3 {
+    .p1, .p2, .p3, .p4 {
         flex-flow: column wrap;
     }
-    .p1 img, .p2 img, .p3 img {
+    .p1 img, .p2 img, .p3 img, .p4 img {
         margin-bottom: 1rem;
         width: 80%;
     }
